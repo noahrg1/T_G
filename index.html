@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENVY Asia ROAS Multiplier Model</title>
 <title>ENVY Asia ROAS Multipliers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -268,6 +269,162 @@
   }
   @media (max-width:560px){ .marginals{grid-template-columns:1fr;} }
 
+  /* DV360 targeting accordion */
+  .market-acc{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    margin-bottom:14px;
+    overflow:hidden;
+  }
+  .market-acc > summary{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 18px;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+    background:var(--surface-2);
+  }
+  .market-acc > summary::-webkit-details-marker{display:none;}
+  .market-acc > summary::before{
+    content:'+';
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--brand-red);
+    width:1em;
+  }
+  .market-acc[open] > summary::before{content:'\2212';}
+  .market-acc-name{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.15rem;
+    color:var(--ink);
+  }
+  .market-acc-sub{
+    font-size:.82rem;
+    color:var(--ink-muted);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .market-acc-body{padding:18px 18px 6px;}
+  .market-acc > summary:focus-visible{outline:2px solid var(--focus); outline-offset:-2px;}
+
+  .avatar-acc{
+    border:1px solid var(--border);
+    border-radius:7px;
+    margin-bottom:12px;
+    background:var(--bg);
+  }
+  .avatar-acc > summary{
+    list-style:none;
+    cursor:pointer;
+    padding:12px 14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .avatar-acc > summary::-webkit-details-marker{display:none;}
+  .avatar-acc > summary::after{
+    content:'+';
+    margin-left:auto;
+    color:var(--ink-muted);
+    font-family:'Fraunces',serif;
+    font-size:1rem;
+  }
+  .avatar-acc[open] > summary::after{content:'\2212';}
+  .avatar-acc > summary:focus-visible{outline:2px solid var(--focus); outline-offset:-2px;}
+  .avatar-rank{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:24px;
+    height:24px;
+    border-radius:999px;
+    background:var(--brand-red);
+    color:#FFF6F2;
+    font-size:.78rem;
+    font-weight:700;
+    flex-shrink:0;
+  }
+  .avatar-name{font-weight:600;font-size:.96rem;}
+  .avatar-body{padding:2px 14px 16px;}
+  .avatar-rationale{
+    color:var(--ink-muted);
+    font-size:.86rem;
+    max-width:80ch;
+    margin:0 0 14px;
+  }
+  .ot-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:14px;
+  }
+  @media (max-width:640px){ .ot-grid{grid-template-columns:1fr;} }
+  .ot-block{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:10px 12px;
+  }
+  .ot-label{
+    display:block;
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--brand-gold);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .chip-list{list-style:none;margin:0;padding:0;}
+  .chip-list li{
+    display:flex;
+    gap:8px;
+    align-items:baseline;
+    font-size:.82rem;
+    padding:3px 0;
+    border-top:1px solid var(--border);
+  }
+  .chip-list li:first-child{border-top:none;}
+  .chip-id{
+    font-family:'Inter',monospace;
+    font-size:.72rem;
+    color:var(--ink-muted);
+    flex-shrink:0;
+  }
+  .copy-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+  @media (max-width:640px){ .copy-grid{grid-template-columns:1fr;} }
+  .copy-label{
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--ink-muted);
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .copy-pre{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:10px 12px;
+    font-family:'Inter',monospace;
+    font-size:.78rem;
+    line-height:1.55;
+    white-space:pre-wrap;
+    word-break:break-word;
+    max-height:220px;
+    overflow-y:auto;
+    margin:0;
+    color:var(--ink);
+  }
+
   .heat-wrap{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -392,15 +549,14 @@
     <span class="wordmark">envy</span>
     <div class="tagline">reach for exceptional</div>
     <h1 class="title">Asia ROAS Multiplier Model</h1>
-    <p class="subtitle">Directional spend-weighting by age and gender across three growth markets, plus a future-demand uplift on the 18&#8211;25 recruitment cohort.</p>
+    <p class="subtitle">Directional spend-weighting by age and gender across three growth markets, with a future-demand modifier on the 18&#8211;35 recruitment and growth cohort &mdash; currently set to +0%.</p>
   </div>
 </div>
 
 <div class="wrap">
 
   <section>
-    <p class="intro-note">Same logic in every tab &mdash; a segment multiplier indexed off Brand Equity Index (BEI), with a +30% uplift on 18&ndash;25 as a future-demand adjustment. All three markets have now fielded their own Wave 2 Brand Health Tracker (NIQ, fielded 17&ndash;29 June 2026) with BEI broken out by age, gender and household income, so every tab below indexes off that market&rsquo;s own measured data &mdash; nothing here is carried across from another market.</p>
-    <p class="intro-note">Taiwan&rsquo;s report is still marked <strong>Preliminary (V1)</strong> as of 17 Aug 2026, so treat that tab as provisional pending the final cut.</p>
+    <p class="intro-note">Segment multiplier indexed off Brand Equity Index (BEI), with a future-demand modifier on 18&ndash;35, currently set to <strong>+0%</strong> (no uplift applied &mdash; raw and adjusted figures match). Each market indexes off its own Wave 2 Brand Health Tracker (NIQ, fielded 17&ndash;29 June 2026), broken out by age, gender and household income.</p>
 
     <div class="snapshot-wrap overflow-x">
       <table>
@@ -413,6 +569,33 @@
           <tr class="in-scope"><td>Taiwan</td><td class="num">80%</td><td class="num">57%</td><td class="num">95%</td><td class="num">97%</td></tr>
         </tbody>
       </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Demand-space alignment &amp; targeting implications</h2>
+    <p class="section-note">Kantar/T&amp;G Demand Spaces Report (APAC Landscape, Oct 2025). Country-level demand-space indexing, China/Taiwan/Thailand/Vietnam, n=500 per market, mid/affluent income tier, 18&ndash;64yo, apple non-rejectors.</p>
+    <p style="max-width:70ch;margin:0 0 14px;"><strong>ENVY&rsquo;s demand spaces:</strong> Special Time to Celebrate (Primary), Sweet Treat (Stretch). Occasion needs: &ldquo;to treat or reward myself,&rdquo; &ldquo;to demonstrate my good taste.&rdquo; Context: solo/intimate sharing, on-the-go.</p>
+    <div class="snapshot-wrap overflow-x">
+      <table>
+        <caption>ENVY demand-space index vs regional average = 100 (Kantar/T&amp;G)</caption>
+        <thead><tr><th>Demand space</th><th>Role</th><th class="num">Regional share</th><th class="num">Vietnam ix</th><th class="num">Thailand ix</th><th class="num">Taiwan ix</th></tr></thead>
+        <tbody>
+          <tr class="in-scope"><td>Special Time to Celebrate</td><td>Primary</td><td class="num">5%</td><td class="num">133</td><td class="num">67</td><td class="num">58</td></tr>
+          <tr class="in-scope"><td>Sweet Treat</td><td>Stretch</td><td class="num">14%</td><td class="num">97</td><td class="num">136</td><td class="num">92</td></tr>
+          <tr><td style="color:var(--ink-muted);">Everyday Health / Health Focus / Feel-Good Finish</td><td style="color:var(--ink-muted);">Category whitespace, unbranded</td><td class="num" style="color:var(--ink-muted);">54%</td><td class="num" style="color:var(--ink-muted);">&mdash;</td><td class="num" style="color:var(--ink-muted);">&mdash;</td><td class="num" style="color:var(--ink-muted);">119&ndash;132</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-note" style="margin:6px 0 0;">Index &lt;80 = under-index. 120+ = over-index. Apples hold 32&ndash;40% share of Health occasions regardless of brand.</p>
+    <div class="callout">
+      <strong>Scope:</strong> moments of consumption, not purchase occasions. Gifting excluded.
+      <ul style="margin:10px 0 0;padding-left:18px;">
+        <li>Vietnam: Special Time to Celebrate index 133 &mdash; highest of the three markets.</li>
+        <li>Thailand: Sweet Treat index 136 (highest of three); Special Time to Celebrate index 67.</li>
+        <li>Taiwan: Special Time to Celebrate index 58 (lowest of three); Sweet Treat index 92; Everyday Health index 119; Feel-Good Finish index 132.</li>
+      </ul>
+      <span class="formula">Priority order: Vietnam &gt; Thailand &gt; Taiwan, ranked on Special Time to Celebrate index</span>
     </div>
   </section>
 
@@ -436,7 +619,10 @@
         <div class="stat-chip highlight">Total BEI (W2)<b>4.4</b></div>
       </div>
       <div class="callout">
-        This is <strong>not</strong> a measured ROAS model &mdash; DV360 doesn&rsquo;t report ROAS by demographic, and the Wave 2 tracker doesn&rsquo;t either. Every multiplier here is an index built off Brand Equity Index (BEI) scores, on the assumption that stronger brand equity in a segment correlates with stronger conversion efficiency for media spend into that segment. Treat the numbers as relative weighting logic, not calibrated figures.
+        <strong>Not a measured ROAS model.</strong> Multiplier = segment BEI &divide; total BEI. Assumption: brand equity correlates with media conversion efficiency.<br>
+        Purchase Intent 100%. Brand Fit 100%. Highest of three markets.<br>
+        Special Time to Celebrate index: 133 (ENVY Primary space, regional average = 100).<br>
+        Market priority: 1 of 3.
         <span class="formula">multiplier = segment BEI &divide; total BEI (4.4)</span>
       </div>
     </section>
@@ -469,7 +655,7 @@
 
     <section>
       <h2>Combined age &times; gender multiplier</h2>
-      <p class="section-note">Age &times; gender indices multiplied together &mdash; the tracker doesn&rsquo;t cross-tab these two dimensions, so this assumes independence rather than reading it off a measured cell. The dashed outline marks where the future-demand uplift lands.</p>
+      <p class="section-note">Age &times; gender indices multiplied together &mdash; the tracker doesn&rsquo;t cross-tab these two dimensions, so this assumes independence rather than reading it off a measured cell. The dashed outline marks the future-demand modifier&rsquo;s target cohort (18&ndash;35) &mdash; currently set to +0%, so these cells match the raw grid.</p>
       <div class="heat-wrap">
         <div class="heat-card">
           <h3>Raw, BEI-derived</h3>
@@ -491,16 +677,16 @@
           </div>
         </div>
         <div class="heat-card">
-          <h3>+30% future-demand adjusted</h3>
-          <p class="sub">Uplift applied to 18&ndash;25 only</p>
+          <h3>Future-demand adjusted (+0%)</h3>
+          <p class="sub">Modifier target: 18&ndash;35 &mdash; no uplift currently applied</p>
           <div class="heatgrid">
             <div></div><div class="colhead">Male</div><div class="colhead">Female</div>
             <div class="lbl">18&ndash;25</div>
-            <div class="cell heat changed" data-value="0.87">0.87x<span class="agelabel">Male</span></div>
-            <div class="cell heat changed" data-value="0.98">0.98x<span class="agelabel">Female</span></div>
+            <div class="cell heat changed" data-value="0.67">0.67x<span class="agelabel">Male</span></div>
+            <div class="cell heat changed" data-value="0.75">0.75x<span class="agelabel">Female</span></div>
             <div class="lbl">26&ndash;35</div>
-            <div class="cell heat" data-value="0.95">0.95x<span class="agelabel">Male</span></div>
-            <div class="cell heat" data-value="1.07">1.07x<span class="agelabel">Female</span></div>
+            <div class="cell heat changed" data-value="0.95">0.95x<span class="agelabel">Male</span></div>
+            <div class="cell heat changed" data-value="1.07">1.07x<span class="agelabel">Female</span></div>
             <div class="lbl">36&ndash;45</div>
             <div class="cell heat" data-value="0.97">0.97x<span class="agelabel">Male</span></div>
             <div class="cell heat" data-value="1.09">1.09x<span class="agelabel">Female</span></div>
@@ -533,7 +719,7 @@
         <ul>
           <li><strong>BEI is a proxy, not ROAS.</strong> It's the closest thing Wave 2 has to a purchase-propensity signal (favourite brand %, recommend %, willingness to pay premium), but it's brand sentiment, not measured media efficiency.</li>
           <li><strong>The combined grid assumes independence.</strong> Age and gender multipliers are multiplied together because the tracker reports them as separate marginals &mdash; there's no actual "Female 18&ndash;25" BEI cell in the data.</li>
-          <li><strong>The +30% sits on 18&ndash;25 only.</strong> That's the one cohort the Brand Blueprint explicitly names as needing investment now for growth later ("attracting younger consumers... is essential for sustainable growth"). 26&ndash;35 is already the stated core target, not a recruitment segment, so it wasn't extended there.</li>
+          <li><strong>The future-demand modifier is currently set to +0%.</strong> The toggle spans the 18&ndash;25 and 26&ndash;35 bands &mdash; the Brand Blueprint names attracting younger consumers as essential for sustainable growth, and 26&ndash;35 is the stated core target today &mdash; but no uplift is applied in this cut, so raw and adjusted figures are identical.</li>
           <li><strong>Household income isn't in this grid.</strong> Wave 2 also reports BEI by income (High 5.0 / Medium 4.4 / Low 3.4) &mdash; adding it as a third dimension would sharpen this further, but could pull the 46&ndash;60/Female weighting up or down depending on how income correlates with that age band, which the tracker doesn't show directly.</li>
         </ul>
       </div>
@@ -558,7 +744,11 @@
         <div class="stat-chip highlight">Total BEI (W2)<b>3.3</b></div>
       </div>
       <div class="callout">
-        ENVY&trade; holds strong, market-leading brand equity in Thailand and carries the highest Distinctiveness of any Asia market tested. This is <strong>not</strong> a measured ROAS model &mdash; DV360 doesn&rsquo;t report ROAS by demographic, and the Wave 2 tracker doesn&rsquo;t either. Every multiplier here is an index built off Thailand's own BEI scores, on the assumption that stronger brand equity in a segment correlates with stronger conversion efficiency for media spend into that segment. Treat the numbers as relative weighting logic, not calibrated figures.
+        <strong>Not a measured ROAS model.</strong> Multiplier = segment BEI &divide; total BEI (Thailand-specific).<br>
+        Distinctiveness 96% &mdash; highest of three markets.<br>
+        Sweet Treat index: 136 (ENVY Stretch space). Special Time to Celebrate index: 67 (ENVY Primary space).<br>
+        Creative framing priority: Sweet Treat occasion over Special Time to Celebrate occasion.<br>
+        Market priority: 2 of 3.
         <span class="formula">multiplier = segment BEI &divide; total BEI (3.3)</span>
       </div>
     </section>
@@ -591,7 +781,7 @@
 
     <section>
       <h2>Combined age &times; gender multiplier</h2>
-      <p class="section-note">Age &times; gender indices multiplied together &mdash; the tracker doesn&rsquo;t cross-tab these two dimensions, so this assumes independence rather than reading it off a measured cell. The dashed outline marks where the future-demand uplift lands.</p>
+      <p class="section-note">Age &times; gender indices multiplied together &mdash; the tracker doesn&rsquo;t cross-tab these two dimensions, so this assumes independence rather than reading it off a measured cell. The dashed outline marks the future-demand modifier&rsquo;s target cohort (18&ndash;35) &mdash; currently set to +0%, so these cells match the raw grid.</p>
       <div class="heat-wrap">
         <div class="heat-card">
           <h3>Raw, BEI-derived</h3>
@@ -613,16 +803,16 @@
           </div>
         </div>
         <div class="heat-card">
-          <h3>+30% future-demand adjusted</h3>
-          <p class="sub">Uplift applied to 18&ndash;25 only</p>
+          <h3>Future-demand adjusted (+0%)</h3>
+          <p class="sub">Modifier target: 18&ndash;35 &mdash; no uplift currently applied</p>
           <div class="heatgrid">
             <div></div><div class="colhead">Male</div><div class="colhead">Female</div>
             <div class="lbl">18&ndash;25</div>
-            <div class="cell heat changed" data-value="0.78">0.78x<span class="agelabel">Male</span></div>
-            <div class="cell heat changed" data-value="0.88">0.88x<span class="agelabel">Female</span></div>
+            <div class="cell heat changed" data-value="0.60">0.60x<span class="agelabel">Male</span></div>
+            <div class="cell heat changed" data-value="0.68">0.68x<span class="agelabel">Female</span></div>
             <div class="lbl">26&ndash;35</div>
-            <div class="cell heat" data-value="0.97">0.97x<span class="agelabel">Male</span></div>
-            <div class="cell heat" data-value="1.09">1.09x<span class="agelabel">Female</span></div>
+            <div class="cell heat changed" data-value="0.97">0.97x<span class="agelabel">Male</span></div>
+            <div class="cell heat changed" data-value="1.09">1.09x<span class="agelabel">Female</span></div>
             <div class="lbl">36&ndash;45</div>
             <div class="cell heat" data-value="0.97">0.97x<span class="agelabel">Male</span></div>
             <div class="cell heat" data-value="1.09">1.09x<span class="agelabel">Female</span></div>
@@ -655,7 +845,7 @@
         <ul>
           <li><strong>BEI is a proxy, not ROAS.</strong> Thailand's tracker doesn't report media efficiency by demographic either &mdash; this is brand sentiment, not measured conversion.</li>
           <li><strong>The combined grid assumes independence.</strong> Age and gender multipliers are multiplied together because the tracker reports them as separate marginals &mdash; there's no actual "Female 18&ndash;25" BEI cell in the data.</li>
-          <li><strong>18&ndash;25 is Thailand's weakest cohort by a wide margin</strong> (BEI 2.1 vs 3.3&ndash;3.4 everywhere else), even after the +30% uplift it's still the lowest-indexed segment &mdash; unlike Vietnam, where the uplifted 18&ndash;25 cohort nearly reaches parity with the rest.</li>
+          <li><strong>18&ndash;25 is Thailand's weakest cohort by a wide margin</strong> (BEI 2.1 vs 3.3&ndash;3.4 everywhere else). The future-demand modifier is currently set to +0%, so no uplift is being applied to narrow that gap right now &mdash; 18&ndash;25 stays the lowest-indexed cohort on the raw numbers alone.</li>
           <li><strong>Household income isn't in this grid.</strong> Wave 2 also reports BEI by income (High 3.4 / Medium 3.6 / Low 3.0) &mdash; adding it as a third dimension would sharpen this further.</li>
         </ul>
       </div>
@@ -681,7 +871,10 @@
       </div>
       <div class="callout flag">
         <span class="eyebrow">Preliminary report (V1) &mdash; 17 Aug 2026</span>
-        Taiwan's total BEI (2.5) is the softest of the three markets, consistent with the weaker concept-test Distinctiveness score above (57% vs 90&ndash;96% in Vietnam and Thailand). This is <strong>not</strong> a measured ROAS model &mdash; DV360 doesn&rsquo;t report ROAS by demographic, and the Wave 2 tracker doesn&rsquo;t either. Every multiplier here is an index built off Taiwan's own BEI scores. Treat the numbers as relative weighting logic, not calibrated figures, and expect them to move once Taiwan's final (non-preliminary) report lands.
+        <strong>Not a measured ROAS model.</strong> Multiplier = segment BEI &divide; total BEI (Taiwan-specific). Figures subject to change on Taiwan's final (non-preliminary) report.<br>
+        Total BEI 2.5 &mdash; softest of three markets. Distinctiveness 57% (vs 90&ndash;96% Vietnam/Thailand).<br>
+        Special Time to Celebrate index: 58. Sweet Treat index: 92. Everyday Health index: 119&ndash;132.<br>
+        Market priority: 3 of 3. Most experimental.
         <span class="formula">multiplier = segment BEI &divide; total BEI (2.5)</span>
       </div>
     </section>
@@ -714,7 +907,7 @@
 
     <section>
       <h2>Combined age &times; gender multiplier</h2>
-      <p class="section-note">Age &times; gender indices multiplied together &mdash; the tracker doesn&rsquo;t cross-tab these two dimensions, so this assumes independence rather than reading it off a measured cell. The dashed outline marks where the future-demand uplift lands.</p>
+      <p class="section-note">Age &times; gender indices multiplied together &mdash; the tracker doesn&rsquo;t cross-tab these two dimensions, so this assumes independence rather than reading it off a measured cell. The dashed outline marks the future-demand modifier&rsquo;s target cohort (18&ndash;35) &mdash; currently set to +0%, so these cells match the raw grid.</p>
       <div class="heat-wrap">
         <div class="heat-card">
           <h3>Raw, BEI-derived</h3>
@@ -736,16 +929,16 @@
           </div>
         </div>
         <div class="heat-card">
-          <h3>+30% future-demand adjusted</h3>
-          <p class="sub">Uplift applied to 18&ndash;25 only</p>
+          <h3>Future-demand adjusted (+0%)</h3>
+          <p class="sub">Modifier target: 18&ndash;35 &mdash; no uplift currently applied</p>
           <div class="heatgrid">
             <div></div><div class="colhead">Male</div><div class="colhead">Female</div>
             <div class="lbl">18&ndash;25</div>
-            <div class="cell heat changed" data-value="1.09">1.09x<span class="agelabel">Male</span></div>
-            <div class="cell heat changed" data-value="1.24">1.24x<span class="agelabel">Female</span></div>
+            <div class="cell heat changed" data-value="0.84">0.84x<span class="agelabel">Male</span></div>
+            <div class="cell heat changed" data-value="0.95">0.95x<span class="agelabel">Female</span></div>
             <div class="lbl">26&ndash;35</div>
-            <div class="cell heat" data-value="1.27">1.27x<span class="agelabel">Male</span></div>
-            <div class="cell heat" data-value="1.43">1.43x<span class="agelabel">Female</span></div>
+            <div class="cell heat changed" data-value="1.27">1.27x<span class="agelabel">Male</span></div>
+            <div class="cell heat changed" data-value="1.43">1.43x<span class="agelabel">Female</span></div>
             <div class="lbl">36&ndash;45</div>
             <div class="cell heat" data-value="0.84">0.84x<span class="agelabel">Male</span></div>
             <div class="cell heat" data-value="0.95">0.95x<span class="agelabel">Female</span></div>
@@ -776,9 +969,9 @@
       <div class="caveats">
         <strong>Reading this responsibly</strong>
         <ul>
-          <li><strong>This tab is still Preliminary (V1).</strong> Taiwan's Wave 2 report is dated 25 Aug 2026 and marked preliminary on its cover &mdash; treat these multipliers as provisional and re-check against the final report before locking budget splits.</li>
-          <li><strong>26&ndash;35 is unusually dominant here.</strong> At BEI 3.3 against a total of just 2.5, it's Taiwan's only strong segment (26&ndash;35 Female indexes at 1.43x, even before the future-demand uplift) &mdash; every other age band sits at the same 2.2 BEI, which is why 18&ndash;25, 36&ndash;45 and 46&ndash;60 all carry identical age multipliers.</li>
-          <li><strong>Taiwan's own brand signal is the weakest of the three markets.</strong> Distinctiveness at 57% is well below Vietnam (90%) and Thailand (96%) &mdash; that's a creative/positioning question worth resolving before this market gets meaningful spend, independent of how the audience is weighted.</li>
+          <li><strong>This tab is Preliminary (V1).</strong> Taiwan's Wave 2 report is dated 25 Aug 2026 and marked preliminary on its cover.</li>
+          <li><strong>26&ndash;35 is unusually dominant here.</strong> At BEI 3.3 against a total of just 2.5, it's Taiwan's only strong segment (26&ndash;35 Female indexes at 1.43x, the single highest multiplier in this dataset, even with the future-demand modifier currently at +0%). Every other age band sits at the same 2.2 BEI, which is why 18&ndash;25, 36&ndash;45 and 46&ndash;60 all carry identical age multipliers.</li>
+          <li><strong>Taiwan's own brand signal is the weakest of the three markets.</strong> Distinctiveness at 57%, vs. Vietnam (90%) and Thailand (96%).</li>
           <li><strong>BEI is a proxy, not ROAS.</strong> This is brand sentiment, not measured media efficiency, and the combined grid assumes age and gender act independently since the tracker only reports them as separate marginals.</li>
         </ul>
       </div>
@@ -788,6 +981,2437 @@
       Source: T&amp;G Brand Health Tracker Wave 2, Taiwan (NIQ, fielded 17&ndash;29 June 2026; report marked Preliminary V1 as of 17 Aug 2026) &middot; ENVY&trade; Brand Blueprint, July 2025 &middot; Multipliers are Programmatica's own derivation, not figures published by NIQ or T&amp;G.
     </footer>
   </div>
+
+  <section id="dv360-targeting">
+    <h2>DV360 audience targeting &mdash; by market</h2>
+    <p class="section-note">ENVY only. 10 avatars per market, ranked by purchase propensity &times; volume. Off-the-shelf In-Market/Affinity category IDs: Programmatica account taxonomy. Plus Custom Affinity/Intent keyword list and Custom URL audience list per avatar. Keyword lists are in-market language, translated from this research's stated need-states. URL lists: root domains verified live via search (e.g. afamily.vn, sanook.com, ettoday.net); section/subdomain paths shown (e.g. afamily.vn/suc-khoe, health.sanook.com) are typical site structure, not individually crawled.</p>
+
+      <details class="market-acc">
+        <summary>
+          <span class="market-acc-name">Vietnam</span>
+          <span class="market-acc-sub">10 avatars, ranked by commercial priority</span>
+        </summary>
+        <div class="market-acc-body">
+          <p class="section-note" style="margin-bottom:18px;">10 avatars ranked by purchase propensity &times; volume. Source: Vietnam Wave 2 BEI data, Kantar/T&amp;G demand-space indices.</p>
+          
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">1</span>
+            <span class="avatar-name">Premium Self-Treat Snackers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Highest-propensity segment, all three markets. Strongest BEI age/gender cell: 26&ndash;35 Female. 26&ndash;35 Female multiplier: 1.07x (highest cell, Vietnam).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4646209</span><span>Food &amp; Drink&gt;Food&gt;Candy, Chocolate &amp; Gum</span></li><li><span class="chip-id">4646089</span><span>Food &amp; Drink&gt;Food&gt;Baked Goods</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4517329</span><span>Food &amp; Dining&gt;Foodies</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">táo cao cấp
+táo nhập khẩu
+táo Envy
+mua táo ngon ở đâu
+táo ngọt giòn
+ý tưởng ăn vặt với táo
+món ăn vặt tự thưởng
+ăn vặt lành mạnh
+giao trái cây tận nhà
+ăn vặt sau giờ làm
+mua trái cây chất lượng online
+địa chỉ bán táo ngon
+giao trái cây tươi gần đây
+giá trái cây theo mùa
+lợi ích dinh dưỡng của táo
+ăn vặt ít calo
+ý tưởng đĩa trái cây
+món tráng miệng không cảm giác tội lỗi
+ăn vặt chăm sóc bản thân
+hộp trái cây định kỳ hàng tháng</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">afamily.vn/an-ngon
+shopee.vn
+tiki.vn
+kenh14.vn
+eva.vn
+afamily.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+bachhoaxanh.com
+winmart.vn
+aeon.com.vn
+annam-group.com
+grab.com/vn/en/food
+afamily.vn/suc-khoe
+afamily.vn/nuoi-day-con
+kenh14.vn/doi-song</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">2</span>
+            <span class="avatar-name">Celebration &amp; Special-Occasion Buyers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">ENVY Primary demand space. Self-treat / celebration-occasion signal. Gifting excluded from Kantar&rsquo;s scope. Special Time to Celebrate index: 133 (Vietnam). Highest of three markets.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4558009</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning</span></li><li><span class="chip-id">4558969</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning&gt;Event Planning Services</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4584169</span><span>Lifestyles &amp; Hobbies&gt;Frequently Attends Live Events</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">trái cây cho dịp đặc biệt
+giỏ trái cây cho tiệc
+trái cây cao cấp cho lễ Tết
+mâm trái cây ngày Tết
+đĩa trái cây đãi khách
+trái cây trang trí bàn tiệc
+ý tưởng món ăn ngày lễ
+đồ ăn vặt tiếp khách
+trái cây cho tiệc gia đình
+món tráng miệng ngày lễ
+cách bày trái cây đẹp
+mua táo cao cấp ở đâu
+trái cây cho bữa tiệc
+món ngon dịp lễ hội
+cách trình bày trái cây sang trọng
+loại táo ngon làm tráng miệng
+cách trang trí đĩa trái cây
+bàn tráng miệng dịp đặc biệt
+trái cây cho bữa cơm sum họp
+món ăn vặt cao cấp đãi khách</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">afamily.vn
+kenh14.vn
+eva.vn
+annam-group.com
+aeon.com.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+shopee.vn
+tiki.vn
+bachhoaxanh.com
+winmart.vn
+grab.com/vn/en/food
+afamily.vn/suc-khoe
+afamily.vn/nuoi-day-con
+afamily.vn/an-ngon
+kenh14.vn/doi-song</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">3</span>
+            <span class="avatar-name">Social-Entertaining Hosts</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Entertaining/shared-snacking occasion. Adjacent to ENVY&rsquo;s Special Time to Celebrate space. Social Sharing index: 147 (Vietnam). Highest index in dataset.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4559089</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning&gt;Party Supplies</span></li><li><span class="chip-id">4703449</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Restaurant Delivery &amp; Takeout</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4583569</span><span>Food &amp; Dining&gt;Frequently Dines Out</span></li><li><span class="chip-id">4517449</span><span>Lifestyles &amp; Hobbies&gt;Nightlife Enthusiasts</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">đĩa trái cây đãi khách
+ý tưởng tiếp khách tại nhà
+món ăn vặt cho tiệc tối
+đồ ăn vặt mời bạn bè
+món ăn chung cho buổi họp mặt
+công thức đĩa trái cây
+món ăn nhẹ bằng trái cây
+bàn đồ ăn vặt cho tiệc
+đĩa trái cây cho tiệc chung
+trái cây cho buổi potluck
+ý tưởng tiếp khách đơn giản
+kết hợp trái cây với phô mai
+kết hợp trái cây với đồ uống
+đồ ăn vặt họp mặt thân mật
+xiên trái cây cho tiệc
+ý tưởng món ăn nhẹ đãi khách
+đồ ăn vặt tiệc văn phòng
+trái cây cho buổi dã ngoại
+món ăn kèm tiệc nướng
+ý tưởng tiếp khách cuối tuần</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">kenh14.vn/doi-song
+afamily.vn/an-ngon
+grab.com/vn/en/food
+eva.vn
+zingnews.vn
+afamily.vn
+kenh14.vn
+webtretho.com
+vnexpress.net
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+shopee.vn
+tiki.vn
+bachhoaxanh.com
+winmart.vn
+aeon.com.vn
+annam-group.com
+afamily.vn/suc-khoe
+afamily.vn/nuoi-day-con</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">4</span>
+            <span class="avatar-name">Premium &amp; Branded Grocery Shoppers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Branded/premium fruit purchase rate: 42&ndash;63% across ENVY&rsquo;s demand spaces. Purchase Intent 100%. Brand Fit 100% (Vietnam Wave 2).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4703329</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Grocery Delivery</span></li><li><span class="chip-id">1063126591</span><span>Food &amp; Drink&gt;Food</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4585129</span><span>Shoppers&gt;Shoppers by Store Type&gt;Grocery Shoppers</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">siêu thị cao cấp
+giá trái cây nhập khẩu
+giá táo có thương hiệu
+siêu thị bán trái cây ngon nhất
+giao thực phẩm tươi tận nhà
+trái cây hữu cơ hay nhập khẩu
+nhà cung cấp trái cây chất lượng
+danh sách thực phẩm lành mạnh
+so sánh giá trái cây
+trái cây mua sắm hàng tuần
+nông sản nhập khẩu online
+siêu thị cao cấp gần đây
+hướng dẫn chọn trái cây tươi ngon
+táo ngon nhất trong siêu thị
+ứng dụng giao hàng siêu thị
+mẹo chọn trái cây
+khu trái cây trong siêu thị
+hướng dẫn nông sản theo mùa
+mua táo New Zealand ở đâu
+cách nhận biết táo chín ngon</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">aeon.com.vn
+annam-group.com
+bachhoaxanh.com
+winmart.vn
+tiki.vn
+afamily.vn
+kenh14.vn
+eva.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+shopee.vn
+grab.com/vn/en/food
+afamily.vn/suc-khoe
+afamily.vn/nuoi-day-con
+afamily.vn/an-ngon
+kenh14.vn/doi-song</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">5</span>
+            <span class="avatar-name">Young Urban Professionals (Solo Self-Treat)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">ENVY brand-proxy context: solo/intimate sharing. Targets younger urban singles/couples. Brand Fit 100% (Vietnam Wave 2).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4646209</span><span>Food &amp; Drink&gt;Food&gt;Candy, Chocolate &amp; Gum</span></li><li><span class="chip-id">4507009</span><span>Consumer Electronics&gt;Mobile Phones</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4569649</span><span>Technology&gt;Social Media Enthusiasts</span></li><li><span class="chip-id">4569889</span><span>Lifestyles &amp; Hobbies&gt;Business Professionals</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ăn vặt lành mạnh nhanh gọn
+ăn vặt cho một người
+ý tưởng tự thưởng cho bản thân
+trái cây đóng gói khẩu phần nhỏ
+ăn vặt để trên bàn làm việc
+ăn vặt khi làm việc tại nhà
+danh sách mua sắm cho căn hộ
+ăn vặt cao cấp giá hợp lý
+món tự thưởng sau giờ làm
+ăn vặt cuối tuần chăm sóc bản thân
+ăn vặt khẩu phần nhỏ
+trái cây ở cửa hàng tiện lợi
+ăn vặt khi di chuyển
+ăn vặt trên đường đi làm
+mẹo mua sắm cho người sống ở thành phố
+ăn vặt cao cấp tiết kiệm
+mua sắm cho hộ gia đình độc thân
+câu nói tự thưởng cho bản thân
+ăn vặt phong cách sống đô thị
+chế độ ăn của dân văn phòng trẻ</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">kenh14.vn
+zingnews.vn
+shopee.vn
+kenh14.vn/doi-song
+tiki.vn
+afamily.vn
+eva.vn
+webtretho.com
+vnexpress.net
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+bachhoaxanh.com
+winmart.vn
+aeon.com.vn
+annam-group.com
+grab.com/vn/en/food
+afamily.vn/suc-khoe
+afamily.vn/nuoi-day-con
+afamily.vn/an-ngon</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">6</span>
+            <span class="avatar-name">Premium Online Grocery &amp; Delivery Shoppers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Convenience-led premium grocery/delivery behaviour. Channel signal, not occasion signal. E-commerce/delivery-led grocery market, Vietnam.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4703329</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Grocery Delivery</span></li><li><span class="chip-id">1063126594</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4517569</span><span>Shoppers&gt;Shopping Enthusiasts</span></li><li><span class="chip-id">4569529</span><span>Technology&gt;Mobile Enthusiasts</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ứng dụng giao hàng siêu thị
+đặt trái cây tươi online
+giao trái cây gần đây
+giao hàng siêu thị trong ngày
+siêu thị cao cấp online
+giao trái cây nhập khẩu
+mã giảm giá ứng dụng siêu thị
+đặt nông sản tươi online
+giao hàng siêu thị hàng tuần
+mua trái cây trên siêu thị online
+đăng ký giao trái cây định kỳ
+mua trái cây chất lượng online
+đánh giá ứng dụng giao hàng siêu thị
+ứng dụng giao hàng siêu thị tốt nhất
+dịch vụ giao trái cây
+cửa hàng trái cây online
+mã khuyến mãi ứng dụng siêu thị
+mua sắm tiện lợi
+giao trái cây tận cửa
+giá trái cây tươi online</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">tiki.vn
+shopee.vn
+bachhoaxanh.com
+winmart.vn
+grab.com/vn/en/food
+afamily.vn
+kenh14.vn
+eva.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+aeon.com.vn
+annam-group.com
+afamily.vn/suc-khoe
+afamily.vn/nuoi-day-con
+afamily.vn/an-ngon
+kenh14.vn/doi-song</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">7</span>
+            <span class="avatar-name">Health &amp; Wellness-Conscious Professionals</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Health demand spaces: 54% of all fruit occasions regionally. Category whitespace, unbranded. Health demand spaces: 54% regional occasion share.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4710169</span><span>Home &amp; Garden&gt;Water Purifiers</span></li><li><span class="chip-id">4563169</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4706569</span><span>Food &amp; Dining&gt;Prefers Organic Food</span></li><li><span class="chip-id">4511329</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ý tưởng ăn vặt lành mạnh
+trái cây ít đường
+trái cây giàu chất xơ
+trái cây tốt cho chế độ ăn kiêng
+thói quen ăn uống lành mạnh
+thông tin dinh dưỡng trái cây
+ăn vặt lành mạnh ở văn phòng
+ăn uống sạch
+trái cây hỗ trợ kiểm soát cân nặng
+trái cây cho chế độ ăn cân bằng
+mẹo sống lành mạnh
+trái cây so với đồ ăn vặt chế biến sẵn
+ý tưởng ăn vặt chăm sóc sức khỏe
+trái cây giàu dưỡng chất
+ăn uống có ý thức với trái cây
+giao ăn vặt lành mạnh
+lợi ích chất chống oxy hóa trong trái cây
+lượng trái cây nên ăn mỗi ngày
+đăng ký ăn vặt lành mạnh định kỳ
+trái cây được bác sĩ khuyên dùng</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">suckhoedoisong.vn
+vinmec.com
+suckhoedoisong.vn/dinh-duong
+afamily.vn/suc-khoe
+eva.vn/suc-khoe
+afamily.vn
+kenh14.vn
+eva.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+shopee.vn
+tiki.vn
+bachhoaxanh.com
+winmart.vn
+aeon.com.vn
+annam-group.com
+grab.com/vn/en/food
+afamily.vn/nuoi-day-con</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">8</span>
+            <span class="avatar-name">Fitness &amp; Active Lifestyle Enthusiasts</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Overlaps Feel-Good Finish and Health Focus. Functional need: energise / keep full. Lower priority than Taiwan for this avatar.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4564729</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services&gt;Gyms &amp; Athletic Clubs</span></li><li><span class="chip-id">4568209</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services&gt;Exercise Equipment&gt;Fitness Technology Products</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4511329</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs</span></li><li><span class="chip-id">4596889</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs&gt;Yoga Lovers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ăn nhẹ trước khi tập
+trái cây sau khi tập luyện
+ăn vặt tăng năng lượng khi tập gym
+trái cây cho người tập thể thao
+tăng năng lượng tự nhiên
+ăn vặt chuẩn bị bữa ăn thể hình
+đồ ăn vặt mang theo túi tập gym
+ý tưởng ăn nhẹ phục hồi cơ bắp
+trái cây giúp bù nước
+trái cây cho người chạy bộ
+ăn vặt năng lượng sạch
+ăn nhẹ trước khi vận động
+trái cây trong chế độ ăn thể hình
+dinh dưỡng cho lối sống năng động
+ăn nhẹ trước lớp yoga
+trái cây trong dinh dưỡng thể thao
+năng lượng từ đường tự nhiên
+đồ ăn vặt của người có ảnh hưởng về fitness
+ăn vặt lành mạnh mang theo tập gym
+dinh dưỡng phục hồi sau tập luyện</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">suckhoedoisong.vn
+vinmec.com
+vnexpress.net/suc-khoe
+afamily.vn/suc-khoe
+eva.vn/suc-khoe
+afamily.vn
+kenh14.vn
+eva.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+shopee.vn
+tiki.vn
+bachhoaxanh.com
+winmart.vn
+aeon.com.vn
+annam-group.com
+grab.com/vn/en/food
+afamily.vn/nuoi-day-con</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">9</span>
+            <span class="avatar-name">Family Grocery Shoppers (Kids&rsquo; Lunchboxes)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Family grocery basket-volume audience. Lower propensity for ENVY&rsquo;s own occasion. Reach/tertiary layer. Everyday Family Sharing index: 100 (Vietnam).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4532209</span><span>Baby &amp; Children's Products&gt;Infant &amp; Toddler Feeding&gt;Toddler Meals</span></li><li><span class="chip-id">4500169</span><span>Education&gt;Primary &amp; Secondary Schools (K-12)</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4512169</span><span>Lifestyles &amp; Hobbies&gt;Family-Focused</span></li><li><span class="chip-id">4584529</span><span>Shoppers&gt;Shoppers by Store Type&gt;Superstore Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ý tưởng trái cây cho hộp cơm
+ăn vặt lành mạnh cho trẻ em
+trái cây cho bữa trưa ở trường
+trái cây cho trẻ kén ăn
+danh sách mua sắm cho gia đình
+ăn vặt đơn giản cho trẻ
+trái cây ăn vặt cho con
+ăn vặt sau giờ học
+trái cây đóng gói cho cả gia đình
+trái cây phù hợp với trẻ nhỏ
+mẹo chuẩn bị hộp cơm trưa
+lên kế hoạch bữa ăn gia đình
+ăn vặt lành mạnh cho con
+cách cắt trái cây cho trẻ
+ăn vặt tựu trường
+mua sắm gia đình hàng tuần
+trái cây cho trẻ mới biết đi
+đĩa trái cây cho gia đình
+hộp ăn vặt cho trẻ
+mẹo nuôi con ăn uống lành mạnh</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">afamily.vn/nuoi-day-con
+webtretho.com
+bachhoaxanh.com
+winmart.vn
+vnexpress.net/gia-dinh
+afamily.vn
+kenh14.vn
+eva.vn
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+shopee.vn
+tiki.vn
+aeon.com.vn
+annam-group.com
+grab.com/vn/en/food
+afamily.vn/suc-khoe
+afamily.vn/an-ngon</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">10</span>
+            <span class="avatar-name">Wellness-Forward Parents (Better-For-You Swaps)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Health whitespace + family overlap. Smallest avatar. Test-and-learn layer. Lowest priority of the 10 avatars, Vietnam.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4532089</span><span>Baby &amp; Children's Products&gt;Infant &amp; Toddler Feeding&gt;Infant Feeding Supplies</span></li><li><span class="chip-id">4531369</span><span>Baby &amp; Children's Products&gt;Childcare &amp; Education</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4512169</span><span>Lifestyles &amp; Hobbies&gt;Family-Focused</span></li><li><span class="chip-id">4706569</span><span>Food &amp; Dining&gt;Prefers Organic Food</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">đổi món ăn vặt lành mạnh cho con
+giảm đường cho trẻ
+lựa chọn thay thế tự nhiên
+ăn trái cây thay vì kẹo
+ăn vặt cho con không chất phụ gia
+ăn uống lành mạnh cho cả gia đình
+ăn vặt cho trẻ không chất bảo quản
+ăn vặt tốt hơn cho sức khỏe
+món tráng miệng từ trái cây cho trẻ
+thói quen lành mạnh cho gia đình
+vị ngọt tự nhiên cho ăn vặt trẻ em
+mẹo dinh dưỡng nuôi con
+quy định ăn vặt ở trường
+giảm thực phẩm chế biến sẵn cho gia đình
+sinh tố trái cây cho trẻ
+món tráng miệng lành mạnh thay thế
+nuôi con có ý thức về ăn vặt
+ăn vặt hữu cơ cho gia đình
+ăn vặt nguyên chất cho trẻ
+thói quen sống lành mạnh cho gia đình</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">webtretho.com
+afamily.vn/nuoi-day-con
+suckhoedoisong.vn
+vinmec.com
+vnexpress.net/gia-dinh
+afamily.vn
+kenh14.vn
+eva.vn
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+shopee.vn
+tiki.vn
+bachhoaxanh.com
+winmart.vn
+aeon.com.vn
+annam-group.com
+grab.com/vn/en/food
+afamily.vn/suc-khoe
+afamily.vn/an-ngon</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        </div>
+      </details>
+    
+      <details class="market-acc">
+        <summary>
+          <span class="market-acc-name">Thailand</span>
+          <span class="market-acc-sub">10 avatars, ranked by commercial priority</span>
+        </summary>
+        <div class="market-acc-body">
+          <p class="section-note" style="margin-bottom:18px;">10 avatars ranked by purchase propensity &times; volume. Source: Thailand Wave 2 BEI data, Kantar/T&amp;G demand-space indices. Sweet Treat index 136 (over-index); Special Time to Celebrate index 67 (under-index).</p>
+          
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">1</span>
+            <span class="avatar-name">Premium Self-Treat Snackers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Highest-propensity segment, all three markets. Strongest BEI age/gender cell: 26&ndash;35 Female. Sweet Treat index: 136 (Thailand). Highest of three markets.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4646209</span><span>Food &amp; Drink&gt;Food&gt;Candy, Chocolate &amp; Gum</span></li><li><span class="chip-id">4646089</span><span>Food &amp; Drink&gt;Food&gt;Baked Goods</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4517329</span><span>Food &amp; Dining&gt;Foodies</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">แอปเปิ้ลพรีเมียม
+แอปเปิ้ลนำเข้า
+แอปเปิ้ลเอนวี่
+ซื้อแอปเปิ้ลอร่อยที่ไหน
+แอปเปิ้ลหวานกรอบ
+ไอเดียของว่างจากแอปเปิ้ล
+ของว่างให้รางวัลตัวเอง
+ของว่างเพื่อสุขภาพ
+บริการส่งผลไม้ถึงบ้าน
+ของว่างหลังเลิกงาน
+ซื้อผลไม้คุณภาพออนไลน์
+ร้านขายแอปเปิ้ลอร่อย
+ส่งผลไม้สดใกล้ฉัน
+ราคาผลไม้ตามฤดูกาล
+ประโยชน์ของแอปเปิ้ล
+ของว่างแคลอรี่ต่ำ
+ไอเดียจัดจานผลไม้
+ของหวานไม่รู้สึกผิด
+ของว่างดูแลตัวเอง
+บริการสมัครสมาชิกกล่องผลไม้</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">food.sanook.com
+wongnai.com
+shopee.co.th
+lazada.co.th
+kapook.com
+sanook.com
+mthai.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+th.theasianparent.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+tops.co.th
+shoponline.villamarket.com
+grab.com/th/en/food
+health.sanook.com
+women.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">2</span>
+            <span class="avatar-name">Premium &amp; Branded Grocery Shoppers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Branded/premium fruit purchase rate: 42&ndash;63% across ENVY&rsquo;s demand spaces. Distinctiveness 96% (Thailand). Highest of three markets.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4703329</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Grocery Delivery</span></li><li><span class="chip-id">1063126591</span><span>Food &amp; Drink&gt;Food</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4585129</span><span>Shoppers&gt;Shoppers by Store Type&gt;Grocery Shoppers</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ซูเปอร์มาร์เก็ตพรีเมียม
+ราคาผลไม้นำเข้า
+ราคาแอปเปิ้ลมีแบรนด์
+ซูเปอร์มาร์เก็ตผลไม้อร่อยที่สุด
+บริการส่งของสดถึงบ้าน
+ผลไม้ออร์แกนิกหรือผลไม้นำเข้า
+ผู้จำหน่ายผลไม้คุณภาพ
+รายการซื้อของเพื่อสุขภาพ
+เปรียบเทียบราคาผลไม้
+ซื้อผลไม้รายสัปดาห์
+สินค้านำเข้าออนไลน์
+ซูเปอร์มาร์เก็ตพรีเมียมใกล้ฉัน
+วิธีเลือกผลไม้สดคุณภาพ
+แอปเปิ้ลที่ดีที่สุดในซูเปอร์มาร์เก็ต
+แอปพลิเคชันส่งของซูเปอร์มาร์เก็ต
+เคล็ดลับเลือกผลไม้
+แผนกผลไม้ในซูเปอร์มาร์เก็ต
+คู่มือผลไม้ตามฤดูกาล
+ซื้อแอปเปิ้ลนิวซีแลนด์ที่ไหน
+วิธีดูผลไม้สุกพอดี</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">tops.co.th
+shoponline.villamarket.com
+lazada.co.th
+shopee.co.th
+wongnai.com
+sanook.com
+mthai.com
+kapook.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+th.theasianparent.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+grab.com/th/en/food
+health.sanook.com
+women.sanook.com
+food.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">3</span>
+            <span class="avatar-name">Premium Online Grocery &amp; Delivery Shoppers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Convenience-led premium grocery/delivery behaviour. Channel signal, not occasion signal. E-commerce/quick-commerce grocery market, Thailand.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4703329</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Grocery Delivery</span></li><li><span class="chip-id">1063126594</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4517569</span><span>Shoppers&gt;Shopping Enthusiasts</span></li><li><span class="chip-id">4569529</span><span>Technology&gt;Mobile Enthusiasts</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">แอปส่งของซูเปอร์มาร์เก็ต
+สั่งผลไม้สดออนไลน์
+บริการส่งผลไม้ใกล้ฉัน
+ส่งของซูเปอร์มาร์เก็ตวันเดียวถึง
+ซูเปอร์มาร์เก็ตพรีเมียมออนไลน์
+บริการส่งผลไม้นำเข้า
+โค้ดส่วนลดแอปซูเปอร์มาร์เก็ต
+สั่งของสดออนไลน์
+บริการส่งของซูเปอร์มาร์เก็ตรายสัปดาห์
+ซื้อผลไม้ในซูเปอร์มาร์เก็ตออนไลน์
+สมัครบริการส่งผลไม้ประจำ
+ซื้อผลไม้คุณภาพออนไลน์
+รีวิวแอปส่งของซูเปอร์มาร์เก็ต
+แอปส่งของซูเปอร์มาร์เก็ตที่ดีที่สุด
+บริการส่งผลไม้
+ร้านผลไม้ออนไลน์
+โปรโมชั่นแอปซูเปอร์มาร์เก็ต
+ช้อปปิ้งที่สะดวกสบาย
+ส่งผลไม้ถึงหน้าบ้าน
+ราคาผลไม้สดออนไลน์</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">lazada.co.th
+shopee.co.th
+shoponline.villamarket.com
+tops.co.th
+grab.com/th/en/food
+sanook.com
+mthai.com
+kapook.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+wongnai.com
+th.theasianparent.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+health.sanook.com
+women.sanook.com
+food.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">4</span>
+            <span class="avatar-name">Fitness &amp; Active Lifestyle Enthusiasts</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Overlaps Feel-Good Finish and Health Focus. Functional need: energise / keep full. Filling Fuel index: 138. On-the-go index: 119 (Thailand).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4564729</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services&gt;Gyms &amp; Athletic Clubs</span></li><li><span class="chip-id">4568209</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services&gt;Exercise Equipment&gt;Fitness Technology Products</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4511329</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs</span></li><li><span class="chip-id">4596889</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs&gt;Yoga Lovers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ของว่างก่อนออกกำลังกาย
+ผลไม้หลังออกกำลังกาย
+ของว่างเพิ่มพลังงานตอนเข้ายิม
+ผลไม้สำหรับนักกีฬา
+เพิ่มพลังงานแบบธรรมชาติ
+ของว่างเตรียมมื้ออาหารฟิตเนส
+ของว่างใส่กระเป๋าออกกำลังกาย
+ไอเดียของว่างฟื้นฟูกล้ามเนื้อ
+ผลไม้ช่วยเติมน้ำในร่างกาย
+ผลไม้สำหรับนักวิ่ง
+ของว่างพลังงานสะอาด
+ของว่างก่อนออกกำลังกาย
+ผลไม้ในแผนอาหารฟิตเนส
+โภชนาการสำหรับไลฟ์สไตล์กระฉับกระเฉง
+ของว่างก่อนคลาสโยคะ
+ผลไม้ในโภชนาการกีฬา
+พลังงานจากน้ำตาลธรรมชาติ
+ของว่างของอินฟลูเอนเซอร์สายฟิตเนส
+ของว่างเพื่อสุขภาพใส่กระเป๋ายิม
+โภชนาการฟื้นฟูหลังออกกำลังกาย</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">pobpad.com
+hd.co.th
+health.sanook.com
+health.kapook.com
+thaihealth.or.th
+sanook.com
+mthai.com
+kapook.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+wongnai.com
+th.theasianparent.com
+shopee.co.th
+lazada.co.th
+tops.co.th
+shoponline.villamarket.com
+grab.com/th/en/food
+women.sanook.com
+food.sanook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">5</span>
+            <span class="avatar-name">Health &amp; Wellness-Conscious Professionals</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Health demand spaces: 54% of all fruit occasions regionally. Category whitespace, unbranded. Filling Fuel index: 138. On-the-go index: 119 (Thailand).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4710169</span><span>Home &amp; Garden&gt;Water Purifiers</span></li><li><span class="chip-id">4563169</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4706569</span><span>Food &amp; Dining&gt;Prefers Organic Food</span></li><li><span class="chip-id">4511329</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ไอเดียของว่างเพื่อสุขภาพ
+ผลไม้น้ำตาลต่ำ
+ผลไม้ไฟเบอร์สูง
+ผลไม้ดีต่อการควบคุมอาหาร
+พฤติกรรมการกินเพื่อสุขภาพ
+ข้อมูลโภชนาการของผลไม้
+ของว่างเพื่อสุขภาพในที่ทำงาน
+การกินแบบคลีน
+ผลไม้ช่วยควบคุมน้ำหนัก
+ผลไม้สำหรับอาหารสมดุล
+เคล็ดลับไลฟ์สไตล์เพื่อสุขภาพ
+ผลไม้เทียบกับขนมแปรรูป
+ไอเดียของว่างเพื่อสุขภาพกาย
+ผลไม้ที่มีสารอาหารสูง
+การกินอย่างมีสติด้วยผลไม้
+บริการส่งของว่างเพื่อสุขภาพ
+ประโยชน์สารต้านอนุมูลอิสระในผลไม้
+ปริมาณผลไม้ที่ควรทานต่อวัน
+สมัครสมาชิกของว่างเพื่อสุขภาพ
+ผลไม้ที่แพทย์แนะนำ</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">pobpad.com
+hd.co.th
+thaihealth.or.th
+health.sanook.com
+health.kapook.com
+sanook.com
+mthai.com
+kapook.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+wongnai.com
+th.theasianparent.com
+shopee.co.th
+lazada.co.th
+tops.co.th
+shoponline.villamarket.com
+grab.com/th/en/food
+women.sanook.com
+food.sanook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">6</span>
+            <span class="avatar-name">Family Grocery Shoppers (Kids&rsquo; Lunchboxes)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Family grocery basket-volume audience. Lower propensity for ENVY&rsquo;s own occasion. Reach/tertiary layer. Everyday Family Sharing index: 85 (Thailand). Reach layer, not priority.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4532209</span><span>Baby &amp; Children's Products&gt;Infant &amp; Toddler Feeding&gt;Toddler Meals</span></li><li><span class="chip-id">4500169</span><span>Education&gt;Primary &amp; Secondary Schools (K-12)</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4512169</span><span>Lifestyles &amp; Hobbies&gt;Family-Focused</span></li><li><span class="chip-id">4584529</span><span>Shoppers&gt;Shoppers by Store Type&gt;Superstore Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ไอเดียผลไม้ใส่กล่องข้าว
+ของว่างเพื่อสุขภาพสำหรับเด็ก
+ผลไม้สำหรับมื้อกลางวันที่โรงเรียน
+ผลไม้สำหรับเด็กกินยาก
+รายการซื้อของสำหรับครอบครัว
+ของว่างง่ายๆ สำหรับเด็ก
+ผลไม้เป็นของว่างให้ลูก
+ของว่างหลังเลิกเรียน
+ผลไม้แพ็คสำหรับทั้งครอบครัว
+ผลไม้ที่เหมาะกับเด็ก
+เคล็ดลับจัดกล่องข้าวกลางวัน
+วางแผนมื้ออาหารครอบครัว
+ของว่างเพื่อสุขภาพสำหรับลูก
+วิธีตัดผลไม้ให้เด็ก
+ของว่างเปิดเทอม
+ซื้อของประจำสัปดาห์สำหรับครอบครัว
+ผลไม้สำหรับเด็กวัยหัดเดิน
+จานผลไม้สำหรับครอบครัว
+กล่องของว่างสำหรับเด็ก
+เคล็ดลับเลี้ยงลูกให้กินดี</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">th.theasianparent.com
+women.kapook.com
+tops.co.th
+lazada.co.th
+shopee.co.th
+sanook.com
+mthai.com
+kapook.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+wongnai.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+shoponline.villamarket.com
+grab.com/th/en/food
+health.sanook.com
+women.sanook.com
+food.sanook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">7</span>
+            <span class="avatar-name">Young Urban Professionals (Solo Self-Treat)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">ENVY brand-proxy context: solo/intimate sharing. Targets younger urban singles/couples. Sweet Treat index: 136 (Thailand).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4646209</span><span>Food &amp; Drink&gt;Food&gt;Candy, Chocolate &amp; Gum</span></li><li><span class="chip-id">4507009</span><span>Consumer Electronics&gt;Mobile Phones</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4569649</span><span>Technology&gt;Social Media Enthusiasts</span></li><li><span class="chip-id">4569889</span><span>Lifestyles &amp; Hobbies&gt;Business Professionals</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ของว่างเพื่อสุขภาพแบบเร็วๆ
+ของว่างสำหรับคนคนเดียว
+ไอเดียให้รางวัลตัวเอง
+ผลไม้แบ่งทานทีละชิ้น
+ของว่างวางโต๊ะทำงาน
+ของว่างตอนทำงานที่บ้าน
+รายการซื้อของสำหรับคอนโด
+ของว่างพรีเมียมราคาคุ้มค่า
+ของรางวัลหลังเลิกงาน
+ของว่างดูแลตัวเองวันหยุด
+ของว่างขนาดพอดีคำ
+ผลไม้ในร้านสะดวกซื้อ
+ของว่างระหว่างเดินทาง
+ของว่างตอนเดินทางไปทำงาน
+เคล็ดลับซื้อของสำหรับคนในเมือง
+ของว่างพรีเมียมราคาประหยัด
+ซื้อของสำหรับครัวเรือนคนเดียว
+คำคมให้รางวัลตัวเอง
+ของว่างไลฟ์สไตล์คนเมือง
+การกินของคนทำงานรุ่นใหม่</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">women.sanook.com
+mthai.com
+kapook.com
+pantip.com
+khaosod.co.th
+sanook.com
+thairath.co.th
+wongnai.com
+th.theasianparent.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+shopee.co.th
+lazada.co.th
+tops.co.th
+shoponline.villamarket.com
+grab.com/th/en/food
+health.sanook.com
+food.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">8</span>
+            <span class="avatar-name">Celebration &amp; Special-Occasion Buyers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">ENVY Primary demand space. Self-treat / celebration-occasion signal. Gifting excluded from Kantar&rsquo;s scope. Special Time to Celebrate index: 67 (Thailand).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4558009</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning</span></li><li><span class="chip-id">4558969</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning&gt;Event Planning Services</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4584169</span><span>Lifestyles &amp; Hobbies&gt;Frequently Attends Live Events</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ผลไม้สำหรับโอกาสพิเศษ
+ตะกร้าผลไม้สำหรับงานปาร์ตี้
+แอปเปิ้ลพรีเมียมสำหรับฉลอง
+ถาดผลไม้ปีใหม่
+จานผลไม้ต้อนรับแขก
+ผลไม้ตกแต่งโต๊ะงานเลี้ยง
+ไอเดียของว่างช่วงเทศกาล
+ของว่างต้อนรับแขกที่บ้าน
+ผลไม้สำหรับงานรวมญาติ
+ไอเดียของหวานเทศกาล
+วิธีจัดจานผลไม้สวยงาม
+ซื้อแอปเปิ้ลพรีเมียมที่ไหน
+ผลไม้สำหรับงานเลี้ยง
+ของอร่อยช่วงเทศกาล
+การจัดผลไม้แบบหรูหรา
+แอปเปิ้ลพันธุ์ไหนเหมาะทำของหวาน
+วิธีตกแต่งจานผลไม้
+โต๊ะของหวานโอกาสพิเศษ
+ผลไม้สำหรับงานสังสรรค์ครอบครัว
+ของว่างพรีเมียมต้อนรับแขก</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">sanook.com
+mthai.com
+kapook.com
+tops.co.th
+shoponline.villamarket.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+wongnai.com
+th.theasianparent.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+shopee.co.th
+lazada.co.th
+grab.com/th/en/food
+health.sanook.com
+women.sanook.com
+food.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">9</span>
+            <span class="avatar-name">Social-Entertaining Hosts</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Entertaining/shared-snacking occasion. Adjacent to ENVY&rsquo;s Special Time to Celebrate space. Social Sharing index: 75 (Thailand). Secondary layer.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4559089</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning&gt;Party Supplies</span></li><li><span class="chip-id">4703449</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Restaurant Delivery &amp; Takeout</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4583569</span><span>Food &amp; Dining&gt;Frequently Dines Out</span></li><li><span class="chip-id">4517449</span><span>Lifestyles &amp; Hobbies&gt;Nightlife Enthusiasts</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">จานผลไม้ต้อนรับแขก
+ไอเดียต้อนรับแขกที่บ้าน
+ของว่างงานเลี้ยงมื้อค่ำ
+ของว่างเลี้ยงเพื่อน
+ของกินแชร์กันในงานสังสรรค์
+สูตรจัดจานผลไม้
+ของว่างทานเล่นจากผลไม้
+โต๊ะของว่างในงานปาร์ตี้
+จัดเลี้ยงจานผลไม้
+ผลไม้สำหรับงานโพลัคปาร์ตี้
+ไอเดียต้อนรับแขกแบบง่ายๆ
+ผลไม้คู่กับชีส
+ผลไม้คู่กับเครื่องดื่ม
+ของว่างงานสังสรรค์กันเอง
+ไม้ปิ้งผลไม้สำหรับงานปาร์ตี้
+ไอเดียของว่างต้อนรับแขก
+ของว่างงานเลี้ยงออฟฟิศ
+ผลไม้สำหรับปิกนิก
+เมนูเคียงบาร์บีคิวจากผลไม้
+ไอเดียต้อนรับแขกวันหยุดสุดสัปดาห์</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">wongnai.com
+grab.com/th/en/food
+food.sanook.com
+women.sanook.com
+mthai.com
+sanook.com
+kapook.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+th.theasianparent.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+shopee.co.th
+lazada.co.th
+tops.co.th
+shoponline.villamarket.com
+health.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">10</span>
+            <span class="avatar-name">Wellness-Forward Parents (Better-For-You Swaps)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Health whitespace + family overlap. Smallest avatar. Test-and-learn layer. Sweet Treat index: 136 (Thailand) vs. Everyday Health/Feel-Good Finish indices not measured here.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4532089</span><span>Baby &amp; Children's Products&gt;Infant &amp; Toddler Feeding&gt;Infant Feeding Supplies</span></li><li><span class="chip-id">4531369</span><span>Baby &amp; Children's Products&gt;Childcare &amp; Education</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4512169</span><span>Lifestyles &amp; Hobbies&gt;Family-Focused</span></li><li><span class="chip-id">4706569</span><span>Food &amp; Dining&gt;Prefers Organic Food</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">เปลี่ยนของว่างให้ดีต่อสุขภาพลูก
+ลดน้ำตาลให้เด็ก
+ทางเลือกของว่างจากธรรมชาติ
+กินผลไม้แทนลูกอม
+ของว่างไม่มีสารปรุงแต่งสำหรับเด็ก
+การกินเพื่อสุขภาพทั้งครอบครัว
+ของว่างเด็กไม่มีสารกันบูด
+ของว่างที่ดีต่อสุขภาพมากกว่า
+ของหวานจากผลไม้สำหรับเด็ก
+นิสัยสุขภาพดีสำหรับครอบครัว
+ความหวานธรรมชาติในของว่างเด็ก
+เคล็ดลับโภชนาการเลี้ยงลูก
+แนวทางของว่างในโรงเรียน
+ลดอาหารแปรรูปสำหรับครอบครัว
+สมูทตี้ผลไม้สำหรับเด็ก
+ของหวานทางเลือกเพื่อสุขภาพ
+การเลี้ยงลูกอย่างใส่ใจเรื่องของว่าง
+ของว่างออร์แกนิกสำหรับครอบครัว
+ของว่างจากวัตถุดิบแท้สำหรับเด็ก
+กิจวัตรสุขภาพดีของครอบครัว</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">th.theasianparent.com
+thaihealth.or.th
+pobpad.com
+hd.co.th
+women.sanook.com
+sanook.com
+mthai.com
+kapook.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+wongnai.com
+shopee.co.th
+lazada.co.th
+tops.co.th
+shoponline.villamarket.com
+grab.com/th/en/food
+health.sanook.com
+food.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        </div>
+      </details>
+    
+      <details class="market-acc">
+        <summary>
+          <span class="market-acc-name">Taiwan</span>
+          <span class="market-acc-sub">10 avatars, ranked by commercial priority</span>
+        </summary>
+        <div class="market-acc-body">
+          <p class="section-note" style="margin-bottom:18px;">10 avatars ranked by purchase propensity &times; volume. Source: Taiwan Wave 2 BEI data, Kantar/T&amp;G demand-space indices. Everyday Health index 119, Feel-Good Finish index 132 (over-index); Special Time to Celebrate index 58, Sweet Treat index 92 (under-index).</p>
+          
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">1</span>
+            <span class="avatar-name">Health &amp; Wellness-Conscious Professionals</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Health demand spaces: 54% of all fruit occasions regionally. Category whitespace, unbranded. Everyday Health index: 119. Feel-Good Finish index: 132 (Taiwan). Highest Health-space fit of three markets.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4710169</span><span>Home &amp; Garden&gt;Water Purifiers</span></li><li><span class="chip-id">4563169</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4706569</span><span>Food &amp; Dining&gt;Prefers Organic Food</span></li><li><span class="chip-id">4511329</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">健康點心創意
+低糖水果
+高纖水果
+適合飲食控制的水果
+健康飲食習慣
+水果營養資訊
+辦公室健康點心
+乾淨飲食點心
+有助體重管理的水果
+均衡飲食水果
+健康生活小技巧
+水果與加工零食比較
+養生點心創意
+營養密度高的水果
+正念飲食水果
+健康點心宅配
+水果抗氧化好處
+每日建議水果攝取量
+健康點心訂閱服務
+醫師推薦的水果</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">commonhealth.com.tw
+top1health.com
+health.ettoday.net
+cw.com.tw
+businessweekly.com.tw
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+dcard.tw
+ptt.cc
+babyhome.com.tw
+mamaclub.com.tw
+momoshop.com.tw
+pchome.com.tw
+pxmart.com.tw
+carrefour.com.tw
+foodpanda.com.tw
+7-11.com.tw
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">2</span>
+            <span class="avatar-name">Fitness &amp; Active Lifestyle Enthusiasts</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Overlaps Feel-Good Finish and Health Focus. Functional need: energise / keep full. Feel-Good Finish index: 132 (Taiwan). Highest of three markets.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4564729</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services&gt;Gyms &amp; Athletic Clubs</span></li><li><span class="chip-id">4568209</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services&gt;Exercise Equipment&gt;Fitness Technology Products</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4511329</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs</span></li><li><span class="chip-id">4596889</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs&gt;Yoga Lovers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">運動前點心
+運動後水果
+健身房前能量點心
+適合運動員的水果
+天然能量補充
+健身備餐點心
+健身包隨身點心
+恢復體力點心創意
+補水水果
+適合跑者的水果
+乾淨能量點心
+運動前小點心
+健身飲食水果
+活力生活營養
+瑜伽課前點心
+運動營養水果
+天然糖分能量
+健身網紅點心
+健身包健康點心
+運動後恢復營養</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">commonhealth.com.tw
+top1health.com
+health.ettoday.net
+dcard.tw
+ptt.cc
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+businessweekly.com.tw
+cw.com.tw
+babyhome.com.tw
+mamaclub.com.tw
+momoshop.com.tw
+pchome.com.tw
+pxmart.com.tw
+carrefour.com.tw
+foodpanda.com.tw
+7-11.com.tw
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">3</span>
+            <span class="avatar-name">Premium &amp; Branded Grocery Shoppers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Branded/premium fruit purchase rate: 42&ndash;63% across ENVY&rsquo;s demand spaces. Distinctiveness 57% (Taiwan).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4703329</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Grocery Delivery</span></li><li><span class="chip-id">1063126591</span><span>Food &amp; Drink&gt;Food</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4585129</span><span>Shoppers&gt;Shoppers by Store Type&gt;Grocery Shoppers</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">高級超市
+進口水果價格
+品牌蘋果價格
+水果最好吃的超市
+生鮮食品宅配
+有機水果還是進口水果
+優質水果供應商
+健康食品採購清單
+水果價格比較
+每週水果採購
+線上進口農產品
+附近的高級超市
+挑選新鮮水果的指南
+超市裡最好的蘋果
+超市外送App
+挑水果小技巧
+超市水果專區
+當季農產品指南
+哪裡買紐西蘭蘋果
+如何判斷水果熟度</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">pxmart.com.tw
+carrefour.com.tw
+momoshop.com.tw
+pchome.com.tw
+7-11.com.tw
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+dcard.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+babyhome.com.tw
+mamaclub.com.tw
+foodpanda.com.tw
+health.ettoday.net
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">4</span>
+            <span class="avatar-name">Premium Self-Treat Snackers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Highest-propensity segment, all three markets. Strongest BEI age/gender cell: 26&ndash;35 Female. 26&ndash;35 Female multiplier: 1.43x (highest cell in dataset, Taiwan).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4646209</span><span>Food &amp; Drink&gt;Food&gt;Candy, Chocolate &amp; Gum</span></li><li><span class="chip-id">4646089</span><span>Food &amp; Drink&gt;Food&gt;Baked Goods</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4517329</span><span>Food &amp; Dining&gt;Foodies</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">頂級蘋果
+進口蘋果
+Envy蘋果
+哪裡買好吃的蘋果
+香甜清脆蘋果
+蘋果點心創意
+犒賞自己的點心
+健康點心推薦
+水果宅配到府
+下班後的小確幸點心
+線上購買優質水果
+蘋果好吃的店家
+附近新鮮水果外送
+當季水果價格
+蘋果的營養好處
+低熱量甜點心
+水果拼盤創意
+無罪惡感甜點
+犒賞自己的點心時間
+水果訂閱箱服務</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">momoshop.com.tw
+pchome.com.tw
+7-11.com.tw
+foodpanda.com.tw
+dcard.tw
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+babyhome.com.tw
+mamaclub.com.tw
+pxmart.com.tw
+carrefour.com.tw
+health.ettoday.net
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">5</span>
+            <span class="avatar-name">Wellness-Forward Parents (Better-For-You Swaps)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Health whitespace + family overlap. Smallest avatar. Test-and-learn layer. Everyday Health index: 119. Feel-Good Finish index: 132 (Taiwan). Only market with Health-space index support for this avatar.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4532089</span><span>Baby &amp; Children's Products&gt;Infant &amp; Toddler Feeding&gt;Infant Feeding Supplies</span></li><li><span class="chip-id">4531369</span><span>Baby &amp; Children's Products&gt;Childcare &amp; Education</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4512169</span><span>Lifestyles &amp; Hobbies&gt;Family-Focused</span></li><li><span class="chip-id">4706569</span><span>Food &amp; Dining&gt;Prefers Organic Food</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">給孩子的健康點心替代方案
+幫孩子減糖
+天然點心替代選擇
+用水果代替糖果
+無添加兒童點心
+全家健康飲食
+無防腐劑兒童點心
+更健康的點心選擇
+水果製作兒童甜點
+家庭健康好習慣
+兒童點心的天然甜味
+育兒營養小技巧
+學校點心規範
+減少全家加工食品
+兒童水果奶昔
+健康甜點替代方案
+用心選擇的育兒點心
+全家有機點心
+全食物兒童點心
+全家健康生活習慣</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">babyhome.com.tw
+mamaclub.com.tw
+commonhealth.com.tw
+top1health.com
+7-11.com.tw
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+dcard.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+momoshop.com.tw
+pchome.com.tw
+pxmart.com.tw
+carrefour.com.tw
+foodpanda.com.tw
+health.ettoday.net
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">6</span>
+            <span class="avatar-name">Family Grocery Shoppers (Kids&rsquo; Lunchboxes)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Family grocery basket-volume audience. Lower propensity for ENVY&rsquo;s own occasion. Reach/tertiary layer. Everyday Family Sharing index: 67 (Taiwan). Reach only.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4532209</span><span>Baby &amp; Children's Products&gt;Infant &amp; Toddler Feeding&gt;Toddler Meals</span></li><li><span class="chip-id">4500169</span><span>Education&gt;Primary &amp; Secondary Schools (K-12)</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4512169</span><span>Lifestyles &amp; Hobbies&gt;Family-Focused</span></li><li><span class="chip-id">4584529</span><span>Shoppers&gt;Shoppers by Store Type&gt;Superstore Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">便當水果創意
+兒童健康點心
+學校午餐水果
+適合挑食小孩的水果
+家庭採買清單
+簡單兒童點心
+給孩子的水果點心
+放學後點心
+全家份水果包
+適合小孩的水果
+便當準備技巧
+家庭飲食規劃
+給孩子的健康點心
+水果切法給小孩
+開學點心創意
+每週家庭採買
+適合幼兒的水果
+全家水果拼盤
+兒童點心盒
+育兒健康飲食技巧</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">babyhome.com.tw
+mamaclub.com.tw
+carrefour.com.tw
+pxmart.com.tw
+momoshop.com.tw
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+dcard.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+pchome.com.tw
+foodpanda.com.tw
+7-11.com.tw
+health.ettoday.net
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">7</span>
+            <span class="avatar-name">Premium Online Grocery &amp; Delivery Shoppers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Convenience-led premium grocery/delivery behaviour. Channel signal, not occasion signal. Convenience layer, secondary to Health-led avatars, Taiwan.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4703329</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Grocery Delivery</span></li><li><span class="chip-id">1063126594</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4517569</span><span>Shoppers&gt;Shopping Enthusiasts</span></li><li><span class="chip-id">4569529</span><span>Technology&gt;Mobile Enthusiasts</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">超市外送App
+線上訂購新鮮水果
+附近水果外送服務
+超市當日配送
+線上高級超市
+進口水果外送
+超市App折扣碼
+線上訂購生鮮
+每週超市外送
+線上超市買水果
+訂閱水果外送服務
+線上購買優質水果
+超市外送App評價
+最好用的超市外送App
+水果外送服務
+線上水果店
+超市App優惠碼
+便利的購物方式
+水果宅配到府
+線上新鮮水果價格</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">momoshop.com.tw
+pchome.com.tw
+foodpanda.com.tw
+carrefour.com.tw
+pxmart.com.tw
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+dcard.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+babyhome.com.tw
+mamaclub.com.tw
+7-11.com.tw
+health.ettoday.net
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">8</span>
+            <span class="avatar-name">Young Urban Professionals (Solo Self-Treat)</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">ENVY brand-proxy context: solo/intimate sharing. Targets younger urban singles/couples. Distinctiveness 57% (Taiwan).</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4646209</span><span>Food &amp; Drink&gt;Food&gt;Candy, Chocolate &amp; Gum</span></li><li><span class="chip-id">4507009</span><span>Consumer Electronics&gt;Mobile Phones</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4569649</span><span>Technology&gt;Social Media Enthusiasts</span></li><li><span class="chip-id">4569889</span><span>Lifestyles &amp; Hobbies&gt;Business Professionals</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">快速健康點心
+一人份點心
+犒賞自己的創意
+小份量水果點心
+辦公桌點心
+在家工作點心
+小套房採買清單
+平價頂級點心
+下班後的犒賞
+週末自我寵愛點心
+小份量點心
+便利商店水果
+通勤路上的點心
+通勤點心創意
+都市生活採買技巧
+平價頂級點心推薦
+單身家庭採買
+犒賞自己的金句
+都市生活點心
+年輕上班族飲食</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">dcard.tw
+ptt.cc
+fashion.ettoday.net
+setn.com
+7-11.com.tw
+ettoday.net
+udn.com
+ltn.com.tw
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+babyhome.com.tw
+mamaclub.com.tw
+momoshop.com.tw
+pchome.com.tw
+pxmart.com.tw
+carrefour.com.tw
+foodpanda.com.tw
+health.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">9</span>
+            <span class="avatar-name">Celebration &amp; Special-Occasion Buyers</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">ENVY Primary demand space. Self-treat / celebration-occasion signal. Gifting excluded from Kantar&rsquo;s scope. Special Time to Celebrate index: 58 (Taiwan). Lowest of three markets.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4558009</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning</span></li><li><span class="chip-id">4558969</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning&gt;Event Planning Services</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4584169</span><span>Lifestyles &amp; Hobbies&gt;Frequently Attends Live Events</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">特殊場合水果
+派對水果籃
+節慶用頂級水果
+過年水果禮盤
+招待客人水果盤
+餐桌擺設水果裝飾
+節慶點心創意
+在家招待客人點心
+家庭聚會水果
+節日甜點創意
+水果擺盤美感技巧
+哪裡買頂級蘋果
+聚餐用水果
+節慶美食推薦
+高級水果擺盤
+適合做甜點的蘋果品種
+水果盤裝飾方法
+特殊場合甜點桌
+團圓飯水果
+招待賓客的頂級點心</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">ettoday.net
+setn.com
+star.ettoday.net
+momoshop.com.tw
+pxmart.com.tw
+udn.com
+ltn.com.tw
+dcard.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+babyhome.com.tw
+mamaclub.com.tw
+pchome.com.tw
+carrefour.com.tw
+foodpanda.com.tw
+7-11.com.tw
+health.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">10</span>
+            <span class="avatar-name">Social-Entertaining Hosts</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Entertaining/shared-snacking occasion. Adjacent to ENVY&rsquo;s Special Time to Celebrate space. Social Sharing index: 40 (Taiwan). Lowest index in dataset. Lowest priority.</p>
+            <div class="ot-grid">
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4559089</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning&gt;Party Supplies</span></li><li><span class="chip-id">4703449</span><span>Food &amp; Drink&gt;Food &amp; Grocery Delivery&gt;Restaurant Delivery &amp; Takeout</span></li></ul></div>
+              <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4583569</span><span>Food &amp; Dining&gt;Frequently Dines Out</span></li><li><span class="chip-id">4517449</span><span>Lifestyles &amp; Hobbies&gt;Nightlife Enthusiasts</span></li></ul></div>
+            </div>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">招待客人水果盤
+在家招待客人創意
+晚宴點心創意
+招待朋友的點心
+聚會共享點心
+水果拼盤食譜
+水果輕食創意
+派對點心桌
+宴會水果拼盤
+聚餐帶菜水果
+簡單招待客人創意
+水果搭配起司
+水果搭配飲品
+輕鬆聚會點心
+派對水果串
+招待客人的點心創意
+辦公室聚餐點心
+野餐水果創意
+烤肉配菜水果
+週末招待客人創意</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">foodpanda.com.tw
+dcard.tw
+ettoday.net
+star.ettoday.net
+7-11.com.tw
+setn.com
+udn.com
+ltn.com.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+babyhome.com.tw
+mamaclub.com.tw
+momoshop.com.tw
+pchome.com.tw
+pxmart.com.tw
+carrefour.com.tw
+health.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        </div>
+      </details>
+  </section>
+
+  <section id="demand-space-targeting">
+    <h2>Demand-space targeting &mdash; by moment</h2>
+    <p class="section-note">ENVY only. Targeting built off the Kantar/T&amp;G demand-space table above, by moment rather than by persona. Off-the-shelf In-Market/Affinity category IDs: Programmatica account taxonomy. Plus Custom Affinity/Intent keyword list and Custom URL audience list per market.</p>
+    
+      <details class="market-acc">
+        <summary>
+          <span class="market-acc-name">Special Time to Celebrate</span>
+          <span class="market-acc-sub">Primary demand space</span>
+        </summary>
+        <div class="market-acc-body">
+          <p class="section-note" style="margin-bottom:12px;">Regional average = 100. Vietnam highest of three markets, Taiwan lowest.</p>
+          <div class="ot-grid" style="margin-bottom:18px;">
+            <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4558009</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning</span></li><li><span class="chip-id">4558969</span><span>Gifts &amp; Occasions&gt;Party Supplies &amp; Planning&gt;Event Planning Services</span></li></ul></div>
+            <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4584169</span><span>Lifestyles &amp; Hobbies&gt;Frequently Attends Live Events</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+          </div>
+          
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">VN</span>
+            <span class="avatar-name">Vietnam</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: 133 (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">trái cây cho dịp đặc biệt
+giỏ trái cây cho tiệc
+trái cây cao cấp cho lễ Tết
+mâm trái cây ngày Tết
+đĩa trái cây đãi khách
+trái cây trang trí bàn tiệc
+ý tưởng món ăn ngày lễ
+đồ ăn vặt tiếp khách
+trái cây cho tiệc gia đình
+món tráng miệng ngày lễ
+cách bày trái cây đẹp
+mua táo cao cấp ở đâu
+trái cây cho bữa tiệc
+món ngon dịp lễ hội
+cách trình bày trái cây sang trọng
+loại táo ngon làm tráng miệng
+cách trang trí đĩa trái cây
+bàn tráng miệng dịp đặc biệt
+trái cây cho bữa cơm sum họp
+món ăn vặt cao cấp đãi khách</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">afamily.vn
+kenh14.vn
+eva.vn
+annam-group.com
+aeon.com.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+shopee.vn
+tiki.vn
+bachhoaxanh.com
+winmart.vn
+grab.com/vn/en/food
+afamily.vn/suc-khoe
+afamily.vn/nuoi-day-con
+afamily.vn/an-ngon
+kenh14.vn/doi-song</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">TH</span>
+            <span class="avatar-name">Thailand</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: 67 (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ผลไม้สำหรับโอกาสพิเศษ
+ตะกร้าผลไม้สำหรับงานปาร์ตี้
+แอปเปิ้ลพรีเมียมสำหรับฉลอง
+ถาดผลไม้ปีใหม่
+จานผลไม้ต้อนรับแขก
+ผลไม้ตกแต่งโต๊ะงานเลี้ยง
+ไอเดียของว่างช่วงเทศกาล
+ของว่างต้อนรับแขกที่บ้าน
+ผลไม้สำหรับงานรวมญาติ
+ไอเดียของหวานเทศกาล
+วิธีจัดจานผลไม้สวยงาม
+ซื้อแอปเปิ้ลพรีเมียมที่ไหน
+ผลไม้สำหรับงานเลี้ยง
+ของอร่อยช่วงเทศกาล
+การจัดผลไม้แบบหรูหรา
+แอปเปิ้ลพันธุ์ไหนเหมาะทำของหวาน
+วิธีตกแต่งจานผลไม้
+โต๊ะของหวานโอกาสพิเศษ
+ผลไม้สำหรับงานสังสรรค์ครอบครัว
+ของว่างพรีเมียมต้อนรับแขก</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">sanook.com
+mthai.com
+kapook.com
+tops.co.th
+shoponline.villamarket.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+wongnai.com
+th.theasianparent.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+shopee.co.th
+lazada.co.th
+grab.com/th/en/food
+health.sanook.com
+women.sanook.com
+food.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">TW</span>
+            <span class="avatar-name">Taiwan</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: 58 (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">特殊場合水果
+派對水果籃
+節慶用頂級水果
+過年水果禮盤
+招待客人水果盤
+餐桌擺設水果裝飾
+節慶點心創意
+在家招待客人點心
+家庭聚會水果
+節日甜點創意
+水果擺盤美感技巧
+哪裡買頂級蘋果
+聚餐用水果
+節慶美食推薦
+高級水果擺盤
+適合做甜點的蘋果品種
+水果盤裝飾方法
+特殊場合甜點桌
+團圓飯水果
+招待賓客的頂級點心</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">ettoday.net
+setn.com
+star.ettoday.net
+momoshop.com.tw
+pxmart.com.tw
+udn.com
+ltn.com.tw
+dcard.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+babyhome.com.tw
+mamaclub.com.tw
+pchome.com.tw
+carrefour.com.tw
+foodpanda.com.tw
+7-11.com.tw
+health.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        </div>
+      </details>
+    
+      <details class="market-acc">
+        <summary>
+          <span class="market-acc-name">Sweet Treat</span>
+          <span class="market-acc-sub">Stretch demand space</span>
+        </summary>
+        <div class="market-acc-body">
+          <p class="section-note" style="margin-bottom:12px;">Regional average = 100. Thailand highest of three markets.</p>
+          <div class="ot-grid" style="margin-bottom:18px;">
+            <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4646209</span><span>Food &amp; Drink&gt;Food&gt;Candy, Chocolate &amp; Gum</span></li><li><span class="chip-id">4646089</span><span>Food &amp; Drink&gt;Food&gt;Baked Goods</span></li></ul></div>
+            <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4517329</span><span>Food &amp; Dining&gt;Foodies</span></li><li><span class="chip-id">4517689</span><span>Shoppers&gt;Luxury Shoppers</span></li></ul></div>
+          </div>
+          
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">VN</span>
+            <span class="avatar-name">Vietnam</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: 97 (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">táo cao cấp
+táo nhập khẩu
+táo Envy
+mua táo ngon ở đâu
+táo ngọt giòn
+ý tưởng ăn vặt với táo
+món ăn vặt tự thưởng
+ăn vặt lành mạnh
+giao trái cây tận nhà
+ăn vặt sau giờ làm
+mua trái cây chất lượng online
+địa chỉ bán táo ngon
+giao trái cây tươi gần đây
+giá trái cây theo mùa
+lợi ích dinh dưỡng của táo
+ăn vặt ít calo
+ý tưởng đĩa trái cây
+món tráng miệng không cảm giác tội lỗi
+ăn vặt chăm sóc bản thân
+hộp trái cây định kỳ hàng tháng</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">afamily.vn/an-ngon
+shopee.vn
+tiki.vn
+kenh14.vn
+eva.vn
+afamily.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+suckhoedoisong.vn
+vinmec.com
+bachhoaxanh.com
+winmart.vn
+aeon.com.vn
+annam-group.com
+grab.com/vn/en/food
+afamily.vn/suc-khoe
+afamily.vn/nuoi-day-con
+kenh14.vn/doi-song</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">TH</span>
+            <span class="avatar-name">Thailand</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: 136 (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">แอปเปิ้ลพรีเมียม
+แอปเปิ้ลนำเข้า
+แอปเปิ้ลเอนวี่
+ซื้อแอปเปิ้ลอร่อยที่ไหน
+แอปเปิ้ลหวานกรอบ
+ไอเดียของว่างจากแอปเปิ้ล
+ของว่างให้รางวัลตัวเอง
+ของว่างเพื่อสุขภาพ
+บริการส่งผลไม้ถึงบ้าน
+ของว่างหลังเลิกงาน
+ซื้อผลไม้คุณภาพออนไลน์
+ร้านขายแอปเปิ้ลอร่อย
+ส่งผลไม้สดใกล้ฉัน
+ราคาผลไม้ตามฤดูกาล
+ประโยชน์ของแอปเปิ้ล
+ของว่างแคลอรี่ต่ำ
+ไอเดียจัดจานผลไม้
+ของหวานไม่รู้สึกผิด
+ของว่างดูแลตัวเอง
+บริการสมัครสมาชิกกล่องผลไม้</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">food.sanook.com
+wongnai.com
+shopee.co.th
+lazada.co.th
+kapook.com
+sanook.com
+mthai.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+th.theasianparent.com
+pobpad.com
+hd.co.th
+thaihealth.or.th
+tops.co.th
+shoponline.villamarket.com
+grab.com/th/en/food
+health.sanook.com
+women.sanook.com
+health.kapook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">TW</span>
+            <span class="avatar-name">Taiwan</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: 92 (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">頂級蘋果
+進口蘋果
+Envy蘋果
+哪裡買好吃的蘋果
+香甜清脆蘋果
+蘋果點心創意
+犒賞自己的點心
+健康點心推薦
+水果宅配到府
+下班後的小確幸點心
+線上購買優質水果
+蘋果好吃的店家
+附近新鮮水果外送
+當季水果價格
+蘋果的營養好處
+低熱量甜點心
+水果拼盤創意
+無罪惡感甜點
+犒賞自己的點心時間
+水果訂閱箱服務</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">momoshop.com.tw
+pchome.com.tw
+7-11.com.tw
+foodpanda.com.tw
+dcard.tw
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+ptt.cc
+businessweekly.com.tw
+cw.com.tw
+commonhealth.com.tw
+top1health.com
+babyhome.com.tw
+mamaclub.com.tw
+pxmart.com.tw
+carrefour.com.tw
+health.ettoday.net
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        </div>
+      </details>
+    
+      <details class="market-acc">
+        <summary>
+          <span class="market-acc-name">Everyday Health &amp; Feel-Good Finish</span>
+          <span class="market-acc-sub">Category whitespace, unbranded</span>
+        </summary>
+        <div class="market-acc-body">
+          <p class="section-note" style="margin-bottom:12px;">Regional share of all fruit occasions: 54%. Not individually indexed in Vietnam/Thailand Wave 2. Taiwan: Everyday Health 119, Feel-Good Finish 132.</p>
+          <div class="ot-grid" style="margin-bottom:18px;">
+            <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; In-Market</span><ul class="chip-list"><li><span class="chip-id">4710169</span><span>Home &amp; Garden&gt;Water Purifiers</span></li><li><span class="chip-id">4563169</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services</span></li><li><span class="chip-id">4564729</span><span>Sports &amp; Fitness&gt;Fitness Products &amp; Services&gt;Gyms &amp; Athletic Clubs</span></li></ul></div>
+            <div class="ot-block"><span class="ot-label">Off-the-shelf &mdash; Affinity</span><ul class="chip-list"><li><span class="chip-id">4706569</span><span>Food &amp; Dining&gt;Prefers Organic Food</span></li><li><span class="chip-id">4511329</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs</span></li><li><span class="chip-id">4596889</span><span>Sports &amp; Fitness&gt;Health &amp; Fitness Buffs&gt;Yoga Lovers</span></li></ul></div>
+          </div>
+          
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">VN</span>
+            <span class="avatar-name">Vietnam</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: &mdash; (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ý tưởng ăn vặt lành mạnh
+trái cây ít đường
+trái cây giàu chất xơ
+trái cây tốt cho chế độ ăn kiêng
+thói quen ăn uống lành mạnh
+thông tin dinh dưỡng trái cây
+ăn vặt lành mạnh ở văn phòng
+ăn uống sạch
+trái cây hỗ trợ kiểm soát cân nặng
+trái cây cho chế độ ăn cân bằng
+mẹo sống lành mạnh
+trái cây so với đồ ăn vặt chế biến sẵn
+ý tưởng ăn vặt chăm sóc sức khỏe
+trái cây giàu dưỡng chất
+ăn uống có ý thức với trái cây
+giao ăn vặt lành mạnh
+lợi ích chất chống oxy hóa trong trái cây
+lượng trái cây nên ăn mỗi ngày
+đăng ký ăn vặt lành mạnh định kỳ
+trái cây được bác sĩ khuyên dùng</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">suckhoedoisong.vn
+vinmec.com
+suckhoedoisong.vn/dinh-duong
+afamily.vn/suc-khoe
+eva.vn/suc-khoe
+afamily.vn
+kenh14.vn
+eva.vn
+webtretho.com
+vnexpress.net
+zingnews.vn
+dantri.com.vn
+shopee.vn
+tiki.vn
+bachhoaxanh.com
+winmart.vn
+aeon.com.vn
+annam-group.com
+grab.com/vn/en/food
+afamily.vn/nuoi-day-con</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">TH</span>
+            <span class="avatar-name">Thailand</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: &mdash; (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">ไอเดียของว่างเพื่อสุขภาพ
+ผลไม้น้ำตาลต่ำ
+ผลไม้ไฟเบอร์สูง
+ผลไม้ดีต่อการควบคุมอาหาร
+พฤติกรรมการกินเพื่อสุขภาพ
+ข้อมูลโภชนาการของผลไม้
+ของว่างเพื่อสุขภาพในที่ทำงาน
+การกินแบบคลีน
+ผลไม้ช่วยควบคุมน้ำหนัก
+ผลไม้สำหรับอาหารสมดุล
+เคล็ดลับไลฟ์สไตล์เพื่อสุขภาพ
+ผลไม้เทียบกับขนมแปรรูป
+ไอเดียของว่างเพื่อสุขภาพกาย
+ผลไม้ที่มีสารอาหารสูง
+การกินอย่างมีสติด้วยผลไม้
+บริการส่งของว่างเพื่อสุขภาพ
+ประโยชน์สารต้านอนุมูลอิสระในผลไม้
+ปริมาณผลไม้ที่ควรทานต่อวัน
+สมัครสมาชิกของว่างเพื่อสุขภาพ
+ผลไม้ที่แพทย์แนะนำ</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">pobpad.com
+hd.co.th
+thaihealth.or.th
+health.sanook.com
+health.kapook.com
+sanook.com
+mthai.com
+kapook.com
+khaosod.co.th
+thairath.co.th
+pantip.com
+wongnai.com
+th.theasianparent.com
+shopee.co.th
+lazada.co.th
+tops.co.th
+shoponline.villamarket.com
+grab.com/th/en/food
+women.sanook.com
+food.sanook.com</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="avatar-acc">
+          <summary>
+            <span class="avatar-rank">TW</span>
+            <span class="avatar-name">Taiwan</span>
+          </summary>
+          <div class="avatar-body">
+            <p class="avatar-rationale">Index: 119&ndash;132 (regional average = 100).</p>
+            <div class="copy-grid">
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; keywords (20)</div>
+                <pre class="copy-pre">健康點心創意
+低糖水果
+高纖水果
+適合飲食控制的水果
+健康飲食習慣
+水果營養資訊
+辦公室健康點心
+乾淨飲食點心
+有助體重管理的水果
+均衡飲食水果
+健康生活小技巧
+水果與加工零食比較
+養生點心創意
+營養密度高的水果
+正念飲食水果
+健康點心宅配
+水果抗氧化好處
+每日建議水果攝取量
+健康點心訂閱服務
+醫師推薦的水果</pre>
+              </div>
+              <div class="copy-block">
+                <div class="copy-label">Custom Affinity/Intent audience &mdash; URLs (20)</div>
+                <pre class="copy-pre">commonhealth.com.tw
+top1health.com
+health.ettoday.net
+cw.com.tw
+businessweekly.com.tw
+ettoday.net
+setn.com
+udn.com
+ltn.com.tw
+dcard.tw
+ptt.cc
+babyhome.com.tw
+mamaclub.com.tw
+momoshop.com.tw
+pchome.com.tw
+pxmart.com.tw
+carrefour.com.tw
+foodpanda.com.tw
+7-11.com.tw
+star.ettoday.net</pre>
+              </div>
+            </div>
+          </div>
+        </details>
+        </div>
+      </details>
+  </section>
 
 </div>
 
@@ -834,8 +3458,8 @@
   // Real, market-specific Wave 2 BEI-derived multipliers (see the marginal
   // tables and callouts in each tab for how each of these is calculated).
   var DATA_VN = [
-    {label:'18–25', gender:'Male',   value:0.87},
-    {label:'18–25', gender:'Female', value:0.98},
+    {label:'18–25', gender:'Male',   value:0.67},
+    {label:'18–25', gender:'Female', value:0.75},
     {label:'26–35', gender:'Male',   value:0.95},
     {label:'26–35', gender:'Female', value:1.07},
     {label:'36–45', gender:'Male',   value:0.97},
@@ -844,8 +3468,8 @@
     {label:'46–60', gender:'Female', value:1.28}
   ];
   var DATA_TH = [
-    {label:'18–25', gender:'Male',   value:0.78},
-    {label:'18–25', gender:'Female', value:0.88},
+    {label:'18–25', gender:'Male',   value:0.60},
+    {label:'18–25', gender:'Female', value:0.68},
     {label:'26–35', gender:'Male',   value:0.97},
     {label:'26–35', gender:'Female', value:1.09},
     {label:'36–45', gender:'Male',   value:0.97},
@@ -854,8 +3478,8 @@
     {label:'46–60', gender:'Female', value:1.06}
   ];
   var DATA_TW = [
-    {label:'18–25', gender:'Male',   value:1.09},
-    {label:'18–25', gender:'Female', value:1.24},
+    {label:'18–25', gender:'Male',   value:0.84},
+    {label:'18–25', gender:'Female', value:0.95},
     {label:'26–35', gender:'Male',   value:1.27},
     {label:'26–35', gender:'Female', value:1.43},
     {label:'36–45', gender:'Male',   value:0.84},
